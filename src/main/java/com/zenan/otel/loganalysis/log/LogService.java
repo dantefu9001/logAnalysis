@@ -22,9 +22,12 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service("logService")
 public class LogService {
@@ -32,6 +35,8 @@ public class LogService {
     private Tracer tracer;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LogService.class);
+
+    private final Pattern pattern = Pattern.compile("\\+\\d\\.\\d+");
 
     @PostConstruct
     public void init() {
@@ -86,37 +91,55 @@ public class LogService {
         }
     }
 
-//    @WithSpan
+    //    @WithSpan
     void rclCppPublish(Long timeStamp, String lineTxt, BufferedReader bufferedReader) {
-        timeStamp += 1000L;
-        Span parentSpan = tracer.spanBuilder("ros2::rclcpp_publish").setStartTimestamp(timeStamp, TimeUnit.MILLISECONDS).startSpan();
+        Span parentSpan = tracer.spanBuilder("ros2::rclcpp_publish").setStartTimestamp(timeStamp, TimeUnit.SECONDS).startSpan();
         try (Scope scope = parentSpan.makeCurrent()) {
             rclPublish(timeStamp, bufferedReader);
         } finally {
-            parentSpan.end(timeStamp + 600L, TimeUnit.MILLISECONDS);
+            parentSpan.end(timeStamp + 600L, TimeUnit.SECONDS);
         }
     }
 
 
-//    @WithSpan
+    //    @WithSpan
     void rclPublish(Long timeStamp, BufferedReader bufferedReader) {
         timeStamp += 1000L;
-        Span childSpan = tracer.spanBuilder("ros2::rcl_publish").setStartTimestamp(timeStamp, TimeUnit.MILLISECONDS).startSpan();
+        Span childSpan = tracer.spanBuilder("ros2::rcl_publish").setStartTimestamp(timeStamp, TimeUnit.NANOSECONDS).startSpan();
+        Long timeDiff = 0L;
+
         try (Scope scope = childSpan.makeCurrent()) {
+            String line = bufferedReader.readLine();
+            Matcher matcher = pattern.matcher(line);
+            if (matcher.find()) {
+                Float f = Float.parseFloat(matcher.group()) * 1000000000f;
+                timeDiff = f.longValue();
+            }
             rmwPublish(timeStamp, bufferedReader);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         } finally {
-            childSpan.end(timeStamp + 500, TimeUnit.MILLISECONDS);
+            childSpan.end(timeStamp + timeDiff, TimeUnit.NANOSECONDS);
         }
     }
 
-//    @WithSpan
+    //    @WithSpan
     void rmwPublish(long timeStamp, BufferedReader bufferedReader) {
-        timeStamp += 1000L;
-        Span grandChildSpan = tracer.spanBuilder("ros2::rmw_publish").setStartTimestamp(timeStamp, TimeUnit.MILLISECONDS).startSpan();
+        Span grandChildSpan = tracer.spanBuilder("ros2::rmw_publish").setStartTimestamp(timeStamp, TimeUnit.NANOSECONDS).startSpan();
+        Long timeDiff = 0L;
+
         try (Scope scope = grandChildSpan.makeCurrent()) {
+            String line = bufferedReader.readLine();
+            Matcher matcher = pattern.matcher(line);
+            if (matcher.find()) {
+                Float f = Float.parseFloat(matcher.group()) * 1000000000f;
+                timeDiff = f.longValue();
+            }
             LOGGER.info("Over");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         } finally {
-            grandChildSpan.end(timeStamp + 500, TimeUnit.MILLISECONDS);
+            grandChildSpan.end(timeStamp + timeDiff, TimeUnit.NANOSECONDS);
         }
     }
 }
