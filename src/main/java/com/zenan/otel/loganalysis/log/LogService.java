@@ -8,8 +8,6 @@ import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.context.propagation.ContextPropagators;
 import io.opentelemetry.exporter.jaeger.JaegerGrpcSpanExporter;
-import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
-import io.opentelemetry.extension.annotations.WithSpan;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.resources.Resource;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
@@ -17,7 +15,6 @@ import io.opentelemetry.sdk.trace.export.BatchSpanProcessor;
 import io.opentelemetry.semconv.resource.attributes.ResourceAttributes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -25,6 +22,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -38,10 +36,13 @@ public class LogService {
 
     private final Pattern pattern = Pattern.compile("\\+\\d\\.\\d+");
 
+    Long timeDiff = 0L;
+    Long timeStamp = 0l;
+
     @PostConstruct
     public void init() {
 
-        Resource serviceNameResource = Resource.create(Attributes.of(ResourceAttributes.SERVICE_NAME, "test service"));
+        Resource serviceNameResource = Resource.create(Attributes.of(ResourceAttributes.SERVICE_NAME, "ros2 tracing"));
 
         SdkTracerProvider sdkTracerProvider = SdkTracerProvider.builder()
                 .addSpanProcessor(BatchSpanProcessor.builder(JaegerGrpcSpanExporter.builder()
@@ -78,8 +79,9 @@ public class LogService {
             while ((lineTxt = bufferedReader.readLine()) != null) {
                 if (lineTxt.contains("rclcpp_publish")) {
                     //开始rclcpp_publish
-                    Long timeStamp = System.currentTimeMillis();
-                    rclCppPublish(timeStamp, lineTxt, bufferedReader);
+                    Date date = new Date();
+                    timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
+                    rclCppPublish(lineTxt, bufferedReader);
 
                 }
             }
@@ -92,54 +94,72 @@ public class LogService {
     }
 
     //    @WithSpan
-    void rclCppPublish(Long timeStamp, String lineTxt, BufferedReader bufferedReader) {
-        Span parentSpan = tracer.spanBuilder("ros2::rclcpp_publish").setStartTimestamp(timeStamp, TimeUnit.SECONDS).startSpan();
+    void rclCppPublish(String lineTxt, BufferedReader bufferedReader) throws IOException {
+        timeDiff = 0L;
+        Long elapsedTime = 0l;
+        Span parentSpan = tracer.spanBuilder("rclcpp_publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+        LOGGER.info(lineTxt);
         try (Scope scope = parentSpan.makeCurrent()) {
-            rclPublish(timeStamp, bufferedReader);
+            rclPublish(bufferedReader);
         } finally {
-            parentSpan.end(timeStamp + 600L, TimeUnit.SECONDS);
+            parentSpan.end(timeStamp, TimeUnit.MICROSECONDS);
         }
     }
 
 
     //    @WithSpan
-    void rclPublish(Long timeStamp, BufferedReader bufferedReader) {
-        timeStamp += 1000L;
-        Span childSpan = tracer.spanBuilder("ros2::rcl_publish").setStartTimestamp(timeStamp, TimeUnit.NANOSECONDS).startSpan();
-        Long timeDiff = 0L;
-
-        try (Scope scope = childSpan.makeCurrent()) {
-            String line = bufferedReader.readLine();
-            Matcher matcher = pattern.matcher(line);
-            if (matcher.find()) {
-                Float f = Float.parseFloat(matcher.group()) * 1000000000f;
-                timeDiff = f.longValue();
-            }
-            rmwPublish(timeStamp, bufferedReader);
+    void rclPublish( BufferedReader bufferedReader) {
+        String line;
+        try {
+            line = bufferedReader.readLine();
+            LOGGER.info(line);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+        Matcher matcher = pattern.matcher(line);
+        if (matcher.find()) {
+            Float f = Float.parseFloat(matcher.group()) * 1000000000f;
+            timeDiff += TimeUnit.NANOSECONDS.toMicros(f.longValue());
+            timeStamp += timeDiff <1?1: timeDiff;
+        }
+        Span childSpan = tracer.spanBuilder("rcl_publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+        try (Scope scope = childSpan.makeCurrent()) {
+            rmwPublish(bufferedReader);
         } finally {
-            childSpan.end(timeStamp + timeDiff, TimeUnit.NANOSECONDS);
+            childSpan.end(timeStamp, TimeUnit.MICROSECONDS);
         }
     }
 
     //    @WithSpan
-    void rmwPublish(long timeStamp, BufferedReader bufferedReader) {
-        Span grandChildSpan = tracer.spanBuilder("ros2::rmw_publish").setStartTimestamp(timeStamp, TimeUnit.NANOSECONDS).startSpan();
-        Long timeDiff = 0L;
+    void rmwPublish(BufferedReader bufferedReader) {
+        String line = null;
+        Long elapsedTime = 0L;
+        try {
+            line = bufferedReader.readLine();
+            LOGGER.info(line);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Matcher matcher = pattern.matcher(line);
+        if (matcher.find()) {
+            Float f = Float.parseFloat(matcher.group()) * 1000000000f;
+            timeDiff += TimeUnit.NANOSECONDS.toMicros(f.longValue());
+            timeStamp += timeDiff <1?1: timeDiff;
+        }
+        Span grandChildSpan = tracer.spanBuilder("rmw_publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
 
         try (Scope scope = grandChildSpan.makeCurrent()) {
-            String line = bufferedReader.readLine();
-            Matcher matcher = pattern.matcher(line);
+            line = bufferedReader.readLine();
+            matcher = pattern.matcher(line);
             if (matcher.find()) {
                 Float f = Float.parseFloat(matcher.group()) * 1000000000f;
-                timeDiff = f.longValue();
+                timeStamp += TimeUnit.NANOSECONDS.toMicros(f.longValue());
             }
-            LOGGER.info("Over");
+            LOGGER.info(line);
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
-            grandChildSpan.end(timeStamp + timeDiff, TimeUnit.NANOSECONDS);
+            grandChildSpan.end(timeStamp , TimeUnit.MICROSECONDS);
         }
     }
 }
