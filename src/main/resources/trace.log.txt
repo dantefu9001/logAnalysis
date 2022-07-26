@@ -1,0 +1,557 @@
+[112506.316387252] (+.) zenan-VirtualBox ros2rcl_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { context_handle = 0x5591E8715F80, version = 4.1.0 }
+[112506.346088281] (+0.029701029) zenan-VirtualBox ros2rmw_publisher_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { rmw_publisher_handle = 0x5591E888EE50, gid = [ [0] = 1, [1] = 15, [2] = 101, [3] = 145, [4] = 90, [5] = 30, [6] = 78, [7] = 104, [8] = 1, [9] = 0, [10] = 0, [11] = 0, [12] = 0, [13] = 0, [14] = 1, [15] = 3, [16] = 0, [17] = 0, [18] = 0, [19] = 0, [20] = 0, [21] = 0, [22] = 0, [23] = 0 ] }
+[112506.346613618] (+0.000525337) zenan-VirtualBox ros2rmw_subscription_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, gid = [ [0] = 1, [1] = 15, [2] = 101, [3] = 145, [4] = 90, [5] = 30, [6] = 78, [7] = 104, [8] = 1, [9] = 0, [10] = 0, [11] = 0, [12] = 0, [13] = 0, [14] = 2, [15] = 4, [16] = 0, [17] = 0, [18] = 0, [19] = 0, [20] = 0, [21] = 0, [22] = 0, [23] = 0 ] }
+[112506.346654537] (+0.000040919) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF5291BBA0 }
+[112506.346873412] (+0.000218875) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7783, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, message = 0x7F0186C09E80, source_timestamp = 0, taken = 0 }
+[112506.350412571] (+0.003539159) zenan-VirtualBox ros2rmw_publisher_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { rmw_publisher_handle = 0x5591E89096D0, gid = [ [0] = 1, [1] = 15, [2] = 101, [3] = 145, [4] = 90, [5] = 30, [6] = 78, [7] = 104, [8] = 1, [9] = 0, [10] = 0, [11] = 0, [12] = 0, [13] = 0, [14] = 3, [15] = 3, [16] = 0, [17] = 0, [18] = 0, [19] = 0, [20] = 0, [21] = 0, [22] = 0, [23] = 0 ] }
+[112506.350417636] (+0.000005065) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF52917E20 }
+[112506.350443516] (+0.000025880) zenan-VirtualBox ros2rcl_publisher_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291B338, node_handle = 0x5591E87B08E0, rmw_publisher_handle = 0x5591E89096D0, topic_name = rosout, queue_depth = 1000 }
+[112506.350453527] (+0.000010011) zenan-VirtualBox ros2rcl_node_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { node_handle = 0x5591E87B08E0, rmw_handle = 0x5591E88E0F10, node_name = talker, namespace =  }
+[112506.350550095] (+0.000096568) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7783, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, message = 0x7F0186C09E80, source_timestamp = 0, taken = 0 }
+[112506.353517284] (+0.002967189) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF5291CDB0 }
+[112506.353538880] (+0.000021596) zenan-VirtualBox ros2rcl_service_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { service_handle = 0x5591E890ACD0, node_handle = 0x5591E87B08E0, rmw_service_handle = 0x5591E890A1C0, service_name = talkerget_parameters }
+[112506.353541718] (+0.000002838) zenan-VirtualBox ros2rclcpp_service_callback_added { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { service_handle = 0x5591E890ACD0, callback = 0x5591E890AC70 }
+[112506.353562290] (+0.000020572) zenan-VirtualBox ros2rclcpp_callback_register { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E890AC70, symbol = rclcppParameterServiceParameterService(stdshared_ptrrclcppnode_interfacesNodeBaseInterface, stdshared_ptrrclcppnode_interfacesNodeServicesInterface, rclcppnode_interfacesNodeParametersInterface, rmw_qos_profile_s const&){lambda(stdshared_ptrrmw_request_id_s, stdshared_ptrrcl_interfacessrvGetParameters_Request_stdallocatorvoid  , stdshared_ptrrcl_interfacessrvGetParameters_Response_stdallocatorvoid  )#1} }
+[112506.353890996] (+0.000328706) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF5291CDB0 }
+[112506.353902838] (+0.000011842) zenan-VirtualBox ros2rcl_service_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { service_handle = 0x5591E892B230, node_handle = 0x5591E87B08E0, rmw_service_handle = 0x5591E894A6F0, service_name = talkerget_parameter_types }
+[112506.353904170] (+0.000001332) zenan-VirtualBox ros2rclcpp_service_callback_added { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { service_handle = 0x5591E892B230, callback = 0x5591E892B6E0 }
+[112506.353911943] (+0.000007773) zenan-VirtualBox ros2rclcpp_callback_register { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E892B6E0, symbol = rclcppParameterServiceParameterService(stdshared_ptrrclcppnode_interfacesNodeBaseInterface, stdshared_ptrrclcppnode_interfacesNodeServicesInterface, rclcppnode_interfacesNodeParametersInterface, rmw_qos_profile_s const&){lambda(stdshared_ptrrmw_request_id_s, stdshared_ptrrcl_interfacessrvGetParameterTypes_Request_stdallocatorvoid  , stdshared_ptrrcl_interfacessrvGetParameterTypes_Response_stdallocatorvoid  )#2} }
+[112506.354255879] (+0.000343936) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF5291CDB0 }
+[112506.354266663] (+0.000010784) zenan-VirtualBox ros2rcl_service_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { service_handle = 0x5591E894A710, node_handle = 0x5591E87B08E0, rmw_service_handle = 0x5591E8969D70, service_name = talkerset_parameters }
+[112506.354275407] (+0.000008744) zenan-VirtualBox ros2rclcpp_service_callback_added { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { service_handle = 0x5591E894A710, callback = 0x5591E894ACC0 }
+[112506.354281392] (+0.000005985) zenan-VirtualBox ros2rclcpp_callback_register { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E894ACC0, symbol = rclcppParameterServiceParameterService(stdshared_ptrrclcppnode_interfacesNodeBaseInterface, stdshared_ptrrclcppnode_interfacesNodeServicesInterface, rclcppnode_interfacesNodeParametersInterface, rmw_qos_profile_s const&){lambda(stdshared_ptrrmw_request_id_s, stdshared_ptrrcl_interfacessrvSetParameters_Request_stdallocatorvoid  , stdshared_ptrrcl_interfacessrvSetParameters_Response_stdallocatorvoid  )#3} }
+[112506.354676575] (+0.000395183) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF5291D0D0 }
+[112506.354687890] (+0.000011315) zenan-VirtualBox ros2rcl_service_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { service_handle = 0x5591E896A0B0, node_handle = 0x5591E87B08E0, rmw_service_handle = 0x5591E8989B80, service_name = talkerset_parameters_atomically }
+[112506.354688736] (+0.000000846) zenan-VirtualBox ros2rclcpp_service_callback_added { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { service_handle = 0x5591E896A0B0, callback = 0x5591E896A3D0 }
+[112506.354701164] (+0.000012428) zenan-VirtualBox ros2rclcpp_callback_register { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E896A3D0, symbol = rclcppParameterServiceParameterService(stdshared_ptrrclcppnode_interfacesNodeBaseInterface, stdshared_ptrrclcppnode_interfacesNodeServicesInterface, rclcppnode_interfacesNodeParametersInterface, rmw_qos_profile_s const&){lambda(stdshared_ptrrmw_request_id_s, stdshared_ptrrcl_interfacessrvSetParametersAtomically_Request_stdallocatorvoid  , stdshared_ptrrcl_interfacessrvSetParametersAtomically_Response_stdallocatorvoid  )#4} }
+[112506.355200880] (+0.000499716) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF5291D0D0 }
+[112506.355212428] (+0.000011548) zenan-VirtualBox ros2rcl_service_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { service_handle = 0x5591E8989C50, node_handle = 0x5591E87B08E0, rmw_service_handle = 0x5591E89A9090, service_name = talkerdescribe_parameters }
+[112506.355213263] (+0.000000835) zenan-VirtualBox ros2rclcpp_service_callback_added { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { service_handle = 0x5591E8989C50, callback = 0x5591E898A260 }
+[112506.355219595] (+0.000006332) zenan-VirtualBox ros2rclcpp_callback_register { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E898A260, symbol = rclcppParameterServiceParameterService(stdshared_ptrrclcppnode_interfacesNodeBaseInterface, stdshared_ptrrclcppnode_interfacesNodeServicesInterface, rclcppnode_interfacesNodeParametersInterface, rmw_qos_profile_s const&){lambda(stdshared_ptrrmw_request_id_s, stdshared_ptrrcl_interfacessrvDescribeParameters_Request_stdallocatorvoid  , stdshared_ptrrcl_interfacessrvDescribeParameters_Response_stdallocatorvoid  )#5} }
+[112506.355667117] (+0.000447522) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF5291D0D0 }
+[112506.355677706] (+0.000010589) zenan-VirtualBox ros2rcl_service_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { service_handle = 0x5591E89A94E0, node_handle = 0x5591E87B08E0, rmw_service_handle = 0x5591E89C8CD0, service_name = talkerlist_parameters }
+[112506.355679011] (+0.000001305) zenan-VirtualBox ros2rclcpp_service_callback_added { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { service_handle = 0x5591E89A94E0, callback = 0x5591E89A97C0 }
+[112506.355685114] (+0.000006103) zenan-VirtualBox ros2rclcpp_callback_register { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E89A97C0, symbol = rclcppParameterServiceParameterService(stdshared_ptrrclcppnode_interfacesNodeBaseInterface, stdshared_ptrrclcppnode_interfacesNodeServicesInterface, rclcppnode_interfacesNodeParametersInterface, rmw_qos_profile_s const&){lambda(stdshared_ptrrmw_request_id_s, stdshared_ptrrcl_interfacessrvListParameters_Request_stdallocatorvoid  , stdshared_ptrrcl_interfacessrvListParameters_Response_stdallocatorvoid  )#6} }
+[112506.355989203] (+0.000304089) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7783, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, message = 0x7F0186C09E80, source_timestamp = 0, taken = 0 }
+[112506.358320393] (+0.002331190) zenan-VirtualBox ros2rmw_publisher_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { rmw_publisher_handle = 0x5591E89F1460, gid = [ [0] = 1, [1] = 15, [2] = 101, [3] = 145, [4] = 90, [5] = 30, [6] = 78, [7] = 104, [8] = 1, [9] = 0, [10] = 0, [11] = 0, [12] = 0, [13] = 0, [14] = 16, [15] = 3, [16] = 0, [17] = 0, [18] = 0, [19] = 0, [20] = 0, [21] = 0, [22] = 0, [23] = 0 ] }
+[112506.358322174] (+0.000001781) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF5291D740 }
+[112506.358335449] (+0.000013275) zenan-VirtualBox ros2rcl_publisher_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E89C9170, node_handle = 0x5591E87B08E0, rmw_publisher_handle = 0x5591E89F1460, topic_name = parameter_events, queue_depth = 1000 }
+[112506.358381136] (+0.000045687) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF52920790 }
+[112506.358383536] (+0.000002400) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E89C9170, message = 0x7FFF52920790 }
+[112506.358384639] (+0.000001103) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF52920790 }
+[112506.358481867] (+0.000097228) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7783, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, message = 0x7F0186C09E80, source_timestamp = 0, taken = 0 }
+[112506.359025495] (+0.000543628) zenan-VirtualBox ros2rmw_subscription_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E8A096B0, gid = [ [0] = 1, [1] = 15, [2] = 101, [3] = 145, [4] = 90, [5] = 30, [6] = 78, [7] = 104, [8] = 1, [9] = 0, [10] = 0, [11] = 0, [12] = 0, [13] = 0, [14] = 17, [15] = 4, [16] = 0, [17] = 0, [18] = 0, [19] = 0, [20] = 0, [21] = 0, [22] = 0, [23] = 0 ] }
+[112506.359027330] (+0.000001835) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF5291C910 }
+[112506.359042195] (+0.000014865) zenan-VirtualBox ros2rcl_subscription_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { subscription_handle = 0x5591E89F3390, node_handle = 0x5591E87B08E0, rmw_subscription_handle = 0x5591E8A096B0, topic_name = parameter_events, queue_depth = 1000 }
+[112506.359048212] (+0.000006017) zenan-VirtualBox ros2rclcpp_subscription_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { subscription_handle = 0x5591E89F3390, subscription = 0x5591E89F2FF0 }
+[112506.359050481] (+0.000002269) zenan-VirtualBox ros2rclcpp_subscription_callback_added { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { subscription = 0x5591E89F2FF0, callback = 0x5591E89F3158 }
+[112506.359057315] (+0.000006834) zenan-VirtualBox ros2rclcpp_callback_register { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E89F3158, symbol = rclcppTimeSourceNodeStateattachNode(stdshared_ptrrclcppnode_interfacesNodeBaseInterface, stdshared_ptrrclcppnode_interfacesNodeTopicsInterface, stdshared_ptrrclcppnode_interfacesNodeGraphInterface, stdshared_ptrrclcppnode_interfacesNodeServicesInterface, stdshared_ptrrclcppnode_interfacesNodeLoggingInterface, stdshared_ptrrclcppnode_interfacesNodeClockInterface, stdshared_ptrrclcppnode_interfacesNodeParametersInterface){lambda(stdshared_ptrrcl_interfacesmsgParameterEvent_stdallocatorvoid  const)#1} }
+[112506.359171163] (+0.000113848) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF52920C50 }
+[112506.359172325] (+0.000001162) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E89C9170, message = 0x7FFF52920C50 }
+[112506.359173050] (+0.000000725) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF52920C50 }
+[112506.359195640] (+0.000022590) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF52920C50 }
+[112506.359195902] (+0.000000262) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E89C9170, message = 0x7FFF52920C50 }
+[112506.359196153] (+0.000000251) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF52920C50 }
+[112506.359202191] (+0.000006038) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF52920C50 }
+[112506.359202429] (+0.000000238) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E89C9170, message = 0x7FFF52920C50 }
+[112506.359202641] (+0.000000212) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF52920C50 }
+[112506.359210055] (+0.000007414) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF52920C50 }
+[112506.359210298] (+0.000000243) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E89C9170, message = 0x7FFF52920C50 }
+[112506.359210498] (+0.000000200) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF52920C50 }
+[112506.359351578] (+0.000141080) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7783, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, message = 0x7F0186C09E80, source_timestamp = 0, taken = 0 }
+[112506.361551676] (+0.002200098) zenan-VirtualBox ros2rmw_publisher_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { rmw_publisher_handle = 0x5591E89FEAA0, gid = [ [0] = 1, [1] = 15, [2] = 101, [3] = 145, [4] = 90, [5] = 30, [6] = 78, [7] = 104, [8] = 1, [9] = 0, [10] = 0, [11] = 0, [12] = 0, [13] = 0, [14] = 18, [15] = 3, [16] = 0, [17] = 0, [18] = 0, [19] = 0, [20] = 0, [21] = 0, [22] = 0, [23] = 0 ] }
+[112506.361553554] (+0.000001878) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7FFF5291DC80 }
+[112506.361566738] (+0.000013184) zenan-VirtualBox ros2rcl_publisher_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, node_handle = 0x5591E87B08E0, rmw_publisher_handle = 0x5591E89FEAA0, topic_name = chatter, queue_depth = 7 }
+[112506.361585341] (+0.000018603) zenan-VirtualBox ros2rcl_timer_init { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timer_handle = 0x5591E8A0E400, period = 1000000000 }
+[112506.361587327] (+0.000001986) zenan-VirtualBox ros2rclcpp_timer_callback_added { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timer_handle = 0x5591E8A0E400, callback = 0x5591E8A0E0D0 }
+[112506.361591375] (+0.000004048) zenan-VirtualBox ros2rclcpp_callback_register { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, symbol = demo_nodes_cppTalkerTalker(rclcppNodeOptions const&){lambda()#1} }
+[112506.361594193] (+0.000002818) zenan-VirtualBox ros2rclcpp_timer_link_node { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timer_handle = 0x5591E8A0E400, node_handle = 0x5591E87B08E0 }
+[112506.361607063] (+0.000012870) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112506.361608665] (+0.000001602) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112506.361632019] (+0.000023354) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112506.361636246] (+0.000004227) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E89F3390 }
+[112506.361660509] (+0.000024263) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E8A096B0, message = 0x5591E87AC1B0, source_timestamp = 1655868306359177231, taken = 1 }
+[112506.361661590] (+0.000001081) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E87AC1B0 }
+[112506.361662342] (+0.000000752) zenan-VirtualBox ros2rclcpp_take { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E87AC1B0 }
+[112506.361664713] (+0.000002371) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E89F3158, is_intra_process = 0 }
+[112506.361669370] (+0.000004657) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E89F3158 }
+[112506.361671366] (+0.000001996) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112506.361671694] (+0.000000328) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112506.361674284] (+0.000002590) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112506.361674839] (+0.000000555) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E89F3390 }
+[112506.361677316] (+0.000002477) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E8A096B0, message = 0x5591E87AC1B0, source_timestamp = 1655868306359196986, taken = 1 }
+[112506.361677555] (+0.000000239) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E87AC1B0 }
+[112506.361677749] (+0.000000194) zenan-VirtualBox ros2rclcpp_take { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E87AC1B0 }
+[112506.361678059] (+0.000000310) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E89F3158, is_intra_process = 0 }
+[112506.361678602] (+0.000000543) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E89F3158 }
+[112506.361679099] (+0.000000497) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112506.361679291] (+0.000000192) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112506.361680923] (+0.000001632) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112506.361681304] (+0.000000381) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E89F3390 }
+[112506.361682824] (+0.000001520) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E8A096B0, message = 0x5591E87AC1B0, source_timestamp = 1655868306359203348, taken = 1 }
+[112506.361683077] (+0.000000253) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E87AC1B0 }
+[112506.361683277] (+0.000000200) zenan-VirtualBox ros2rclcpp_take { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E87AC1B0 }
+[112506.361683527] (+0.000000250) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E89F3158, is_intra_process = 0 }
+[112506.361683969] (+0.000000442) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E89F3158 }
+[112506.361684377] (+0.000000408) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112506.361684567] (+0.000000190) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112506.361686166] (+0.000001599) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112506.361686899] (+0.000000733) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E89F3390 }
+[112506.361688266] (+0.000001367) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E8A096B0, message = 0x5591E87AC1B0, source_timestamp = 1655868306359211371, taken = 1 }
+[112506.361688500] (+0.000000234) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E87AC1B0 }
+[112506.361688684] (+0.000000184) zenan-VirtualBox ros2rclcpp_take { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E87AC1B0 }
+[112506.361688910] (+0.000000226) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E89F3158, is_intra_process = 0 }
+[112506.361689338] (+0.000000428) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E89F3158 }
+[112506.361689760] (+0.000000422) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112506.361689960] (+0.000000200) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112506.361691780] (+0.000001820) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112506.361692050] (+0.000000270) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112506.361692241] (+0.000000191) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112506.361700741] (+0.000008500) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7783, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, message = 0x7F0186C09E80, source_timestamp = 0, taken = 0 }
+[112507.361684133] (+0.999983392) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112507.361707648] (+0.000023515) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112507.361714877] (+0.000007229) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112507.361838279] (+0.000123402) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112507.361841710] (+0.000003431) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112507.361975471] (+0.000133761) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112507.361977042] (+0.000001571) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112507.361977899] (+0.000000857) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112507.361996386] (+0.000018487) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112507.362001339] (+0.000004953) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112507.362003499] (+0.000002160) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112507.362019762] (+0.000016263) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112507.362020074] (+0.000000312) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112507.362020303] (+0.000000229) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112508.361672177] (+0.999651874) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112508.361684141] (+0.000011964) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112508.361687134] (+0.000002993) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112508.361768064] (+0.000080930) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112508.361771847] (+0.000003783) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112508.361815922] (+0.000044075) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112508.361816607] (+0.000000685) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112508.361817081] (+0.000000474) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112508.361827804] (+0.000010723) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112508.361831696] (+0.000003892) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112508.361833096] (+0.000001400) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112508.361847953] (+0.000014857) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112508.361848398] (+0.000000445) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112508.361848603] (+0.000000205) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112509.361648519] (+0.999799916) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112509.361660266] (+0.000011747) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112509.361663252] (+0.000002986) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112509.361744988] (+0.000081736) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112509.361748241] (+0.000003253) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112509.361798447] (+0.000050206) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112509.361798959] (+0.000000512) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112509.361799791] (+0.000000832) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112509.361810815] (+0.000011024) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112509.361815885] (+0.000005070) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112509.361817163] (+0.000001278) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112509.361832094] (+0.000014931) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112509.361832377] (+0.000000283) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112509.361832590] (+0.000000213) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112510.361702456] (+0.999869866) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112510.361715040] (+0.000012584) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112510.361718091] (+0.000003051) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112510.361793007] (+0.000074916) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112510.361796771] (+0.000003764) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112510.361843936] (+0.000047165) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112510.361844682] (+0.000000746) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112510.361845282] (+0.000000600) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112510.361856621] (+0.000011339) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112510.361860937] (+0.000004316) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112510.361862582] (+0.000001645) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112510.361877099] (+0.000014517) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112510.361877427] (+0.000000328) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112510.361877672] (+0.000000245) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112511.361766933] (+0.999889261) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112511.361785854] (+0.000018921) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112511.361790346] (+0.000004492) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112511.361867963] (+0.000077617) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112511.361873705] (+0.000005742) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112511.361949273] (+0.000075568) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112511.361951210] (+0.000001937) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112511.361952514] (+0.000001304) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112511.361970257] (+0.000017743) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112511.361977296] (+0.000007039) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112511.361980779] (+0.000003483) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112511.362059575] (+0.000078796) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112511.362062182] (+0.000002607) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112511.362063491] (+0.000001309) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112512.361659169] (+0.999595678) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112512.361670865] (+0.000011696) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112512.361674110] (+0.000003245) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112512.361755699] (+0.000081589) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112512.361760012] (+0.000004313) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112512.361810684] (+0.000050672) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112512.361811429] (+0.000000745) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112512.361812306] (+0.000000877) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112512.361823493] (+0.000011187) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112512.361828264] (+0.000004771) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112512.361829859] (+0.000001595) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112512.361843113] (+0.000013254) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112512.361843463] (+0.000000350) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112512.361843627] (+0.000000164) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112513.361648777] (+0.999805150) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112513.361661846] (+0.000013069) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112513.361664588] (+0.000002742) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112513.361772879] (+0.000108291) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112513.361776583] (+0.000003704) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112513.361828574] (+0.000051991) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112513.361829189] (+0.000000615) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112513.361829784] (+0.000000595) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112513.361841958] (+0.000012174) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112513.361846743] (+0.000004785) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112513.361848710] (+0.000001967) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112513.361863989] (+0.000015279) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112513.361864295] (+0.000000306) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112513.361864498] (+0.000000203) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112514.362257965] (+1.000393467) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112514.362269955] (+0.000011990) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112514.362272751] (+0.000002796) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112514.362368878] (+0.000096127) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112514.362372914] (+0.000004036) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112514.362420251] (+0.000047337) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112514.362420998] (+0.000000747) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A18680 }
+[112514.362421566] (+0.000000568) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112514.362432420] (+0.000010854) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112514.362436962] (+0.000004542) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112514.362438549] (+0.000001587) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112514.362453065] (+0.000014516) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112514.362453317] (+0.000000252) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112514.362453490] (+0.000000173) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112515.361630621] (+0.999177131) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112515.361642167] (+0.000011546) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112515.361644982] (+0.000002815) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112515.361686712] (+0.000041730) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112515.361690341] (+0.000003629) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112515.361734317] (+0.000043976) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112515.361735600] (+0.000001283) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112515.361736141] (+0.000000541) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112515.361746444] (+0.000010303) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112515.361750197] (+0.000003753) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112515.361751937] (+0.000001740) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112515.361764276] (+0.000012339) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112515.361764522] (+0.000000246) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112515.361764688] (+0.000000166) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112516.361643994] (+0.999879306) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112516.361656003] (+0.000012009) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112516.361658838] (+0.000002835) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112516.361698030] (+0.000039192) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112516.361701305] (+0.000003275) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112516.361745442] (+0.000044137) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112516.361746071] (+0.000000629) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A18680 }
+[112516.361746627] (+0.000000556) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112516.361757885] (+0.000011258) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112516.361761660] (+0.000003775) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112516.361763394] (+0.000001734) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112516.361776090] (+0.000012696) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112516.361776352] (+0.000000262) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112516.361776561] (+0.000000209) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112517.370459562] (+1.008683001) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112517.370472672] (+0.000013110) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112517.370476316] (+0.000003644) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112517.370525595] (+0.000049279) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112517.370529749] (+0.000004154) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112517.370577839] (+0.000048090) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112517.370579224] (+0.000001385) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112517.370579996] (+0.000000772) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112517.370590659] (+0.000010663) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112517.370596237] (+0.000005578) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112517.370598393] (+0.000002156) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112517.370618865] (+0.000020472) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112517.370619346] (+0.000000481) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112517.370619623] (+0.000000277) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112518.365631739] (+0.995012116) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112518.365643587] (+0.000011848) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112518.365646396] (+0.000002809) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112518.365684279] (+0.000037883) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112518.365687696] (+0.000003417) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112518.365731435] (+0.000043739) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112518.365732074] (+0.000000639) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A18680 }
+[112518.365732976] (+0.000000902) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112518.365743067] (+0.000010091) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112518.365746550] (+0.000003483) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112518.365747899] (+0.000001349) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112518.365760279] (+0.000012380) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112518.365760561] (+0.000000282) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112518.365760746] (+0.000000185) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112518.380556872] (+0.014796126) zenan-VirtualBox ros2rcl_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { context_handle = 0x559404204EC0, version = 4.1.0 }
+[112518.389179617] (+0.008622745) zenan-VirtualBox ros2rmw_publisher_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_publisher_handle = 0x559404351920, gid = [ [0] = 1, [1] = 15, [2] = 101, [3] = 145, [4] = 113, [5] = 30, [6] = 193, [7] = 188, [8] = 1, [9] = 0, [10] = 0, [11] = 0, [12] = 0, [13] = 0, [14] = 1, [15] = 3, [16] = 0, [17] = 0, [18] = 0, [19] = 0, [20] = 0, [21] = 0, [22] = 0, [23] = 0 ] }
+[112518.389621122] (+0.000441505) zenan-VirtualBox ros2rmw_subscription_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x5594043ABBE0, gid = [ [0] = 1, [1] = 15, [2] = 101, [3] = 145, [4] = 113, [5] = 30, [6] = 193, [7] = 188, [8] = 1, [9] = 0, [10] = 0, [11] = 0, [12] = 0, [13] = 0, [14] = 2, [15] = 4, [16] = 0, [17] = 0, [18] = 0, [19] = 0, [20] = 0, [21] = 0, [22] = 0, [23] = 0 ] }
+[112518.389658600] (+0.000037478) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x7FFD076291F0 }
+[112518.390228949] (+0.000570349) zenan-VirtualBox ros2rmw_publisher_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_publisher_handle = 0x5594043C7170, gid = [ [0] = 1, [1] = 15, [2] = 101, [3] = 145, [4] = 113, [5] = 30, [6] = 193, [7] = 188, [8] = 1, [9] = 0, [10] = 0, [11] = 0, [12] = 0, [13] = 0, [14] = 3, [15] = 3, [16] = 0, [17] = 0, [18] = 0, [19] = 0, [20] = 0, [21] = 0, [22] = 0, [23] = 0 ] }
+[112518.390233378] (+0.000004429) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x7FFD07625470 }
+[112518.390251663] (+0.000018285) zenan-VirtualBox ros2rcl_publisher_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD07628988, node_handle = 0x5594041E7370, rmw_publisher_handle = 0x5594043C7170, topic_name = rosout, queue_depth = 1000 }
+[112518.390254539] (+0.000002876) zenan-VirtualBox ros2rcl_node_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { node_handle = 0x5594041E7370, rmw_handle = 0x5594043A0D90, node_name = listener, namespace =  }
+[112518.390545087] (+0.000290548) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7805, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x5594043ABBE0, message = 0x7F79A17F9DC0, source_timestamp = 0, taken = 0 }
+[112518.468402007] (+0.077856920) zenan-VirtualBox ros2rmw_publisher_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_publisher_handle = 0x5594044D7540, gid = [ [0] = 1, [1] = 15, [2] = 101, [3] = 145, [4] = 113, [5] = 30, [6] = 193, [7] = 188, [8] = 1, [9] = 0, [10] = 0, [11] = 0, [12] = 0, [13] = 0, [14] = 4, [15] = 3, [16] = 0, [17] = 0, [18] = 0, [19] = 0, [20] = 0, [21] = 0, [22] = 0, [23] = 0 ] }
+[112518.468410540] (+0.000008533) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x7FFD0762B770 }
+[112518.468451295] (+0.000040755) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7805, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x5594043ABBE0, message = 0x7F79A17F9DC0, source_timestamp = 0, taken = 0 }
+[112518.468459124] (+0.000007829) zenan-VirtualBox ros2rcl_publisher_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x55940442B250, node_handle = 0x5594041E7370, rmw_publisher_handle = 0x5594044D7540, topic_name = parameter_events, queue_depth = 1000 }
+[112518.468765026] (+0.000305902) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x55940442B250, message = 0x5594044285D0 }
+[112518.468766362] (+0.000001336) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x5594044285D0 }
+[112518.470029432] (+0.001263070) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x7FFD0762A700 }
+[112518.470051729] (+0.000022297) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7805, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x5594043ABBE0, message = 0x7F79A17F9DC0, source_timestamp = 0, taken = 0 }
+[112518.470062246] (+0.000010517) zenan-VirtualBox ros2rcl_service_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { service_handle = 0x5594044D83D0, node_handle = 0x5594041E7370, rmw_service_handle = 0x7F7990002C00, service_name = listenerdescribe_parameters }
+[112518.471157506] (+0.001095260) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x7FFD0762A700 }
+[112518.476953206] (+0.005795700) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7805, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x5594043ABBE0, message = 0x7F79A17F9DC0, source_timestamp = 0, taken = 0 }
+[112518.477007713] (+0.000054507) zenan-VirtualBox ros2rcl_service_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { service_handle = 0x559404492360, node_handle = 0x5594041E7370, rmw_service_handle = 0x559404492110, service_name = listenerget_parameters }
+[112518.477129586] (+0.000121873) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7783, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, message = 0x7F0186C09E80, source_timestamp = 0, taken = 1 }
+[112518.477590425] (+0.000460839) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x7FFD0762A700 }
+[112518.477607500] (+0.000017075) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7805, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x5594043ABBE0, message = 0x7F79A17F9DC0, source_timestamp = 0, taken = 0 }
+[112518.477708770] (+0.000101270) zenan-VirtualBox ros2rcl_service_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { service_handle = 0x5594044DF6E0, node_handle = 0x5594041E7370, rmw_service_handle = 0x559404492130, service_name = listenerget_parameter_types }
+[112518.477827035] (+0.000118265) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7783, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, message = 0x7F0186C09E80, source_timestamp = 0, taken = 1 }
+[112518.478272194] (+0.000445159) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x7FFD0762A700 }
+[112518.478288451] (+0.000016257) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7805, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x5594043ABBE0, message = 0x7F79A17F9DC0, source_timestamp = 0, taken = 0 }
+[112518.478393199] (+0.000104748) zenan-VirtualBox ros2rcl_service_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { service_handle = 0x5594044FE920, node_handle = 0x5594041E7370, rmw_service_handle = 0x5594044FE5E0, service_name = listenerlist_parameters }
+[112518.478501129] (+0.000107930) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7783, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, message = 0x7F0186C09E80, source_timestamp = 0, taken = 1 }
+[112518.478942778] (+0.000441649) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x7FFD0762A700 }
+[112518.478959160] (+0.000016382) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7805, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x5594043ABBE0, message = 0x7F79A17F9DC0, source_timestamp = 0, taken = 0 }
+[112518.479030575] (+0.000071415) zenan-VirtualBox ros2rcl_service_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { service_handle = 0x55940451E080, node_handle = 0x5594041E7370, rmw_service_handle = 0x55940451DBB0, service_name = listenerset_parameters }
+[112518.479175153] (+0.000144578) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7783, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, message = 0x7F0186C09E80, source_timestamp = 0, taken = 1 }
+[112518.486644523] (+0.007469370) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x7FFD0762A700 }
+[112518.487507095] (+0.000862572) zenan-VirtualBox ros2rcl_service_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { service_handle = 0x55940453CC50, node_handle = 0x5594041E7370, rmw_service_handle = 0x55940453CC30, service_name = listenerset_parameters_atomically }
+[112518.487615615] (+0.000108520) zenan-VirtualBox ros2rmw_take { cpu_id = 0 }, { vtid = 7805, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x5594043ABBE0, message = 0x7F79A17F9DC0, source_timestamp = 0, taken = 0 }
+[112518.487640031] (+0.000024416) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7783, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, message = 0x7F0186C09E80, source_timestamp = 0, taken = 1 }
+[112518.511287388] (+0.023647357) zenan-VirtualBox ros2rmw_subscription_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, gid = [ [0] = 1, [1] = 15, [2] = 101, [3] = 145, [4] = 113, [5] = 30, [6] = 193, [7] = 188, [8] = 1, [9] = 0, [10] = 0, [11] = 0, [12] = 0, [13] = 0, [14] = 17, [15] = 4, [16] = 0, [17] = 0, [18] = 0, [19] = 0, [20] = 0, [21] = 0, [22] = 0, [23] = 0 ] }
+[112518.511290633] (+0.000003245) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x7FFD0762B1A0 }
+[112518.511312944] (+0.000022311) zenan-VirtualBox ros2rcl_subscription_init { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { subscription_handle = 0x55940451DE30, node_handle = 0x5594041E7370, rmw_subscription_handle = 0x55940456DE20, topic_name = chatter, queue_depth = 10 }
+[112518.514545565] (+0.003232621) zenan-VirtualBox ros2rmw_take { cpu_id = 0 }, { vtid = 7805, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x5594043ABBE0, message = 0x7F79A17F9DC0, source_timestamp = 0, taken = 0 }
+[112518.514723208] (+0.000177643) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7783, vpid = 7770, procname = talker }, { rmw_subscription_handle = 0x5591E88ECE70, message = 0x7F0186C09E80, source_timestamp = 0, taken = 1 }
+[112518.566635344] (+0.051912136) zenan-VirtualBox ros2rmw_take { cpu_id = 0 }, { vtid = 7805, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x5594043ABBE0, message = 0x7F79A17F9DC0, source_timestamp = 0, taken = 1 }
+[112519.361996756] (+0.795361412) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112519.362008623] (+0.000011867) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112519.362011502] (+0.000002879) zenan-VirtualBox ros2callback_start { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112519.362052459] (+0.000040957) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112519.362055703] (+0.000003244) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112519.362098397] (+0.000042694) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112519.362099013] (+0.000000616) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112519.362099569] (+0.000000556) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112519.362183017] (+0.000083448) zenan-VirtualBox ros2callback_end { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112519.362188368] (+0.000005351) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112519.362190283] (+0.000001915) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112519.362204827] (+0.000014544) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112519.362205199] (+0.000000372) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112519.362205417] (+0.000000218) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 1 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112519.362710230] (+0.000504813) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F980, source_timestamp = 1655868319362102788, taken = 1 }
+[112519.362712880] (+0.000002650) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F980 }
+[112519.369791531] (+0.007078651) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112519.369794508] (+0.000002977) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+[112520.361568217] (+0.991773709) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112520.361580406] (+0.000012189) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112520.361583252] (+0.000002846) zenan-VirtualBox ros2callback_start { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112520.361730238] (+0.000146986) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112520.361733760] (+0.000003522) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112520.361772682] (+0.000038922) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112520.361773526] (+0.000000844) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A18680 }
+[112520.361773927] (+0.000000401) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112520.361817279] (+0.000043352) zenan-VirtualBox ros2callback_end { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112520.361821857] (+0.000004578) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112520.361823310] (+0.000001453) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112520.361837226] (+0.000013916) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112520.361837498] (+0.000000272) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112520.361837726] (+0.000000228) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112520.362267895] (+0.000430169) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F190, source_timestamp = 1655868320361777808, taken = 1 }
+[112520.362270542] (+0.000002647) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F190 }
+[112520.362606192] (+0.000335650) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112520.362608374] (+0.000002182) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+[112521.361609775] (+0.999001401) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112521.361621888] (+0.000012113) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112521.361624707] (+0.000002819) zenan-VirtualBox ros2callback_start { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112521.361742118] (+0.000117411) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112521.361745755] (+0.000003637) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112521.361842967] (+0.000097212) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112521.361844158] (+0.000001191) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112521.361844981] (+0.000000823) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112521.361892689] (+0.000047708) zenan-VirtualBox ros2callback_end { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112521.361896987] (+0.000004298) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112521.361898583] (+0.000001596) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112521.361911635] (+0.000013052) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112521.361911936] (+0.000000301) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112521.361912102] (+0.000000166) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112521.362415729] (+0.000503627) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F980, source_timestamp = 1655868321361850518, taken = 1 }
+[112521.362418590] (+0.000002861) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F980 }
+[112521.362742262] (+0.000323672) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112521.362744266] (+0.000002004) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+[112522.361689655] (+0.998945389) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112522.361701511] (+0.000011856) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112522.361704153] (+0.000002642) zenan-VirtualBox ros2callback_start { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112522.361770426] (+0.000066273) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112522.361773850] (+0.000003424) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112522.361860581] (+0.000086731) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112522.361861660] (+0.000001079) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A18680 }
+[112522.361862378] (+0.000000718) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112522.361900732] (+0.000038354) zenan-VirtualBox ros2callback_end { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112522.361905709] (+0.000004977) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112522.361907167] (+0.000001458) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112522.361922491] (+0.000015324) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112522.361922781] (+0.000000290) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112522.361922949] (+0.000000168) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112522.362348524] (+0.000425575) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F190, source_timestamp = 1655868322361867185, taken = 1 }
+[112522.362351172] (+0.000002648) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F190 }
+[112522.362691213] (+0.000340041) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112522.362693606] (+0.000002393) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+[112523.361939349] (+0.999245743) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112523.361951357] (+0.000012008) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112523.361954425] (+0.000003068) zenan-VirtualBox ros2callback_start { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112523.362046746] (+0.000092321) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112523.362050069] (+0.000003323) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112523.362228535] (+0.000178466) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112523.362229794] (+0.000001259) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112523.362230638] (+0.000000844) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112523.362273483] (+0.000042845) zenan-VirtualBox ros2callback_end { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112523.362277730] (+0.000004247) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112523.362279602] (+0.000001872) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112523.362294329] (+0.000014727) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112523.362294877] (+0.000000548) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112523.362295236] (+0.000000359) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112523.362776926] (+0.000481690) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F980, source_timestamp = 1655868323362235007, taken = 1 }
+[112523.362779693] (+0.000002767) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F980 }
+[112523.363152322] (+0.000372629) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112523.363154137] (+0.000001815) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+[112524.363077658] (+0.999923521) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112524.363094999] (+0.000017341) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112524.363099285] (+0.000004286) zenan-VirtualBox ros2callback_start { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112524.363322595] (+0.000223310) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112524.363338937] (+0.000016342) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112524.363410205] (+0.000071268) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112524.363412407] (+0.000002202) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A18680 }
+[112524.363413836] (+0.000001429) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112524.363768140] (+0.000354304) zenan-VirtualBox ros2callback_end { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112524.363776984] (+0.000008844) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112524.363780387] (+0.000003403) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112524.363809453] (+0.000029066) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112524.363810778] (+0.000001325) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112524.363811734] (+0.000000956) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112524.364815040] (+0.001003306) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F490, source_timestamp = 1655868324363419756, taken = 1 }
+[112524.364819036] (+0.000003996) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F490 }
+[112524.365568965] (+0.000749929) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112524.365573809] (+0.000004844) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+[112525.361607073] (+0.996033264) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112525.361726617] (+0.000119544) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112525.361729413] (+0.000002796) zenan-VirtualBox ros2callback_start { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112525.361772211] (+0.000042798) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112525.361775632] (+0.000003421) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112525.361912270] (+0.000136638) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112525.361913214] (+0.000000944) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112525.361913978] (+0.000000764) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112525.362013454] (+0.000099476) zenan-VirtualBox ros2callback_end { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112525.362018922] (+0.000005468) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112525.362020607] (+0.000001685) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112525.362035499] (+0.000014892) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112525.362035878] (+0.000000379) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112525.362036048] (+0.000000170) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112525.362358557] (+0.000322509) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F3D0, source_timestamp = 1655868325361916561, taken = 1 }
+[112525.362361481] (+0.000002924) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F3D0 }
+[112525.362776694] (+0.000415213) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112525.362779773] (+0.000003079) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+[112526.361982008] (+0.999202235) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112526.361993755] (+0.000011747) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112526.361996551] (+0.000002796) zenan-VirtualBox ros2callback_start { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112526.362034252] (+0.000037701) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112526.362037160] (+0.000002908) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112526.362072858] (+0.000035698) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112526.362073447] (+0.000000589) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A18680 }
+[112526.362073947] (+0.000000500) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112526.362124518] (+0.000050571) zenan-VirtualBox ros2callback_end { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112526.362128504] (+0.000003986) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112526.362130171] (+0.000001667) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112526.362144660] (+0.000014489) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112526.362144919] (+0.000000259) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112526.362145107] (+0.000000188) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112526.362560742] (+0.000415635) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F310, source_timestamp = 1655868326362077420, taken = 1 }
+[112526.362565435] (+0.000004693) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F310 }
+[112526.363521647] (+0.000956212) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112526.363526186] (+0.000004539) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+[112527.363128569] (+0.999602383) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112527.363140882] (+0.000012313) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112527.363143552] (+0.000002670) zenan-VirtualBox ros2callback_start { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112527.363187488] (+0.000043936) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112527.363190746] (+0.000003258) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112527.363234151] (+0.000043405) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7F0174010E80 }
+[112527.363234738] (+0.000000587) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x7F0174010E80 }
+[112527.363235252] (+0.000000514) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x7F0174010E80 }
+[112527.363293432] (+0.000058180) zenan-VirtualBox ros2callback_end { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112527.363297598] (+0.000004166) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112527.363299076] (+0.000001478) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112527.363312499] (+0.000013423) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112527.363312779] (+0.000000280) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112527.363312945] (+0.000000166) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112527.363683652] (+0.000370707) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F9A0, source_timestamp = 1655868327363238467, taken = 1 }
+[112527.363686843] (+0.000003191) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F9A0 }
+[112527.364109661] (+0.000422818) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112527.364114883] (+0.000005222) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+[112528.361847634] (+0.997732751) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112528.361860263] (+0.000012629) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112528.361863478] (+0.000003215) zenan-VirtualBox ros2callback_start { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112528.361989556] (+0.000126078) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112528.361993402] (+0.000003846) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112528.362042920] (+0.000049518) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112528.362043589] (+0.000000669) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112528.362044110] (+0.000000521) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112528.362157677] (+0.000113567) zenan-VirtualBox ros2callback_end { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112528.362162864] (+0.000005187) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112528.362164583] (+0.000001719) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112528.362178047] (+0.000013464) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112528.362178308] (+0.000000261) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112528.362178491] (+0.000000183) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112528.362692887] (+0.000514396) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F4F0, source_timestamp = 1655868328362047004, taken = 1 }
+[112528.362697637] (+0.000004750) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F4F0 }
+[112528.363401109] (+0.000703472) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112528.363403212] (+0.000002103) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+[112529.361736986] (+0.998333774) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112529.361748447] (+0.000011461) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112529.361751476] (+0.000003029) zenan-VirtualBox ros2callback_start { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112529.362330685] (+0.000579209) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112529.362336182] (+0.000005497) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112529.362393410] (+0.000057228) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112529.362394835] (+0.000001425) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A18680 }
+[112529.362395873] (+0.000001038) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112529.362554306] (+0.000158433) zenan-VirtualBox ros2callback_end { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112529.362562852] (+0.000008546) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112529.362565428] (+0.000002576) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112529.362589586] (+0.000024158) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112529.362590425] (+0.000000839) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112529.362590964] (+0.000000539) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112529.363016868] (+0.000425904) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F9A0, source_timestamp = 1655868329362399773, taken = 1 }
+[112529.363019009] (+0.000002141) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F9A0 }
+[112529.363520026] (+0.000501017) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112529.363523255] (+0.000003229) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+[112530.363161259] (+0.999638004) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112530.363172952] (+0.000011693) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112530.363175733] (+0.000002781) zenan-VirtualBox ros2callback_start { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112530.363257250] (+0.000081517) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112530.363261098] (+0.000003848) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112530.363299101] (+0.000038003) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112530.363299773] (+0.000000672) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A0C930 }
+[112530.363300291] (+0.000000518) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A0C930 }
+[112530.363550838] (+0.000250547) zenan-VirtualBox ros2callback_end { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112530.363556519] (+0.000005681) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112530.363558200] (+0.000001681) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112530.363573960] (+0.000015760) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112530.363574260] (+0.000000300) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112530.363574430] (+0.000000170) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112530.364066909] (+0.000492479) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F4F0, source_timestamp = 1655868330363380019, taken = 1 }
+[112530.364069626] (+0.000002717) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F4F0 }
+[112530.364402759] (+0.000333133) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112530.364404965] (+0.000002206) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+[112531.361757967] (+0.997353002) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112531.361770361] (+0.000012394) zenan-VirtualBox ros2rclcpp_executor_execute { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { handle = 0x5591E8A0E400 }
+[112531.361773412] (+0.000003051) zenan-VirtualBox ros2callback_start { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0, is_intra_process = 0 }
+[112531.361963608] (+0.000190196) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x7FFF5291EC38, message = 0x5591E8A170E0 }
+[112531.361967394] (+0.000003786) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A170E0 }
+[112531.362004211] (+0.000036817) zenan-VirtualBox ros2rclcpp_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112531.362004840] (+0.000000629) zenan-VirtualBox ros2rcl_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { publisher_handle = 0x5591E8A09EA0, message = 0x5591E8A18680 }
+[112531.362005549] (+0.000000709) zenan-VirtualBox ros2rmw_publish { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { message = 0x5591E8A18680 }
+[112531.362058902] (+0.000053353) zenan-VirtualBox ros2callback_end { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { callback = 0x5591E8A0E0D0 }
+[112531.362063515] (+0.000004613) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112531.362065106] (+0.000001591) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112531.362079553] (+0.000014447) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112531.362079797] (+0.000000244) zenan-VirtualBox ros2rclcpp_executor_get_next_ready { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { }
+[112531.362079995] (+0.000000198) zenan-VirtualBox ros2rclcpp_executor_wait_for_work { cpu_id = 0 }, { vtid = 7770, vpid = 7770, procname = talker }, { timeout = -1 }
+[112531.362434616] (+0.000354621) zenan-VirtualBox ros2rmw_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { rmw_subscription_handle = 0x55940456DE20, message = 0x55940456F9A0, source_timestamp = 1655868331362008431, taken = 1 }
+[112531.362438231] (+0.000003615) zenan-VirtualBox ros2rcl_take { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x55940456F9A0 }
+[112531.362769662] (+0.000331431) zenan-VirtualBox ros2rcl_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { publisher_handle = 0x7FFD0762B688, message = 0x559404576180 }
+[112531.362771940] (+0.000002278) zenan-VirtualBox ros2rmw_publish { cpu_id = 1 }, { vtid = 7793, vpid = 7793, procname = listener }, { message = 0x559404576180 }
+
