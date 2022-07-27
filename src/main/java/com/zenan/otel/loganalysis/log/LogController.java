@@ -19,4 +19,10 @@ public class LogController {
         logService.messagePublish();
         return "success";
     }
+
+    @GetMapping("/subscription-callback")
+    public String callback(){
+        logService.subscriptionCallbacks();
+        return "callback success";
+    }
 }
