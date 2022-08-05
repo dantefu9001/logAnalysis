@@ -38,7 +38,7 @@ public class LogService {
     private final Pattern pattern = Pattern.compile("\\+\\d\\.\\d+");
 
     Long timeDiff = 0L;
-    Long timeStamp = 0l;
+    Long timeStamp = 0L;
 
     @PostConstruct
     public void init() {
@@ -64,7 +64,7 @@ public class LogService {
 
     public void messagePublish() {
         try {
-            InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("trace.log.txt");
+            InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("pingpong.log");
             if (null == inputStream) {
                 throw new NullPointerException("文件不存在");
             }
@@ -73,20 +73,42 @@ public class LogService {
             BufferedReader bufferedReader = new BufferedReader(read);
             String lineTxt = null;
             while ((lineTxt = bufferedReader.readLine()) != null) {
-                if (lineTxt.contains("chatter")) {
+                if (lineTxt.contains("ping") || lineTxt.contains("pong")) {
                     break;
                 }
             }
-            while ((lineTxt = bufferedReader.readLine()) != null) {
-                if (lineTxt.contains("rclcpp_publish")) {
-                    //开始rclcpp_publish
-                    timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
-                    rclCppPublish(lineTxt, bufferedReader);
+            //start the whole chain
+            timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
+            Span span = tracer.spanBuilder("publish-subscription").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+            try (Scope scope = span.makeCurrent()) {
 
+
+                while ((lineTxt = bufferedReader.readLine()) != null) {
+                    if (lineTxt.contains("rclcpp_publish")) {
+                        //开始rclcpp_publish
+                        timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
+                        rclCppPublish(lineTxt, bufferedReader);
+                    }
+                    if (lineTxt.contains("rclcpp_executor_execute")) {
+                        //开始rclcpp_publish
+                        String nextLine = bufferedReader.readLine();
+                        if (nextLine.contains("rmw_take")) {
+                            List<String> array = new ArrayList<>();
+                            array.add(nextLine);
+                            for (int i = 0; i < 5; i++) {
+                                array.add(bufferedReader.readLine());
+                            }
+                            timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
+                            rclCppExecutorExecute(lineTxt, array);
+                            timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
+                            callbacks(array);
+                        }
+                    }
                 }
+                read.close();
+            } finally {
+                span.end(timeStamp, TimeUnit.MICROSECONDS);
             }
-            read.close();
-
         } catch (Exception e) {
             System.out.println("读取文件内容出错");
             e.printStackTrace();
@@ -164,8 +186,8 @@ public class LogService {
     public void subscriptionCallbacks() {
         timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
         Span span = tracer.spanBuilder("subscription-callbacks").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-        try(Scope scope = span.makeCurrent()) {
-            InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("trace.log.txt");
+        try (Scope scope = span.makeCurrent()) {
+            InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("pingpong.log");
             if (null == inputStream) {
                 throw new NullPointerException("文件不存在");
             }
@@ -197,7 +219,7 @@ public class LogService {
         } catch (Exception e) {
             LOGGER.error(e.getMessage());
             e.printStackTrace();
-        }finally {
+        } finally {
             span.end();
         }
     }
@@ -237,7 +259,7 @@ public class LogService {
             timeDiff += TimeUnit.NANOSECONDS.toMicros(f.longValue());
             timeStamp += timeDiff < 1 ? 1 : timeDiff;
         }
-        Span childSpan = tracer.spanBuilder("rcl_cpp_take").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+        Span childSpan = tracer.spanBuilder("rcl_take").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
         try (Scope scope = childSpan.makeCurrent()) {
             rwmTake(lines.get(lines.size() - 6), lines);
         } finally {

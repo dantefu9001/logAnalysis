@@ -14,7 +14,7 @@ public class LogController {
         this.logService = logService;
     }
 
-    @GetMapping("/message-publishing")
+    @GetMapping("/view")
     public String publish() {
         logService.messagePublish();
         return "success";
