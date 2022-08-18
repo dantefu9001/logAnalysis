@@ -1,7 +1,5 @@
 package com.zenan.otel.loganalysis.log;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,13 +14,7 @@ public class LogController {
 
     @GetMapping("/view")
     public String publish() {
-        logService.messagePublish();
+        logService.viewLog();
         return "success";
-    }
-
-    @GetMapping("/subscription-callback")
-    public String callback(){
-        logService.subscriptionCallbacks();
-        return "callback success";
     }
 }

@@ -19,11 +19,9 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -33,12 +31,17 @@ public class LogService {
 
     private Tracer tracer;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(LogService.class);
+    private static final Logger Logger = LoggerFactory.getLogger(LogService.class);
 
     private final Pattern pattern = Pattern.compile("\\+\\d\\.\\d+");
 
     Long timeDiff = 0L;
     Long timeStamp = 0L;
+    private String timerCallback = "0x560469906E70";
+    private String pingPublish = "ping";
+    private String pongPublish = "pong";
+    private String pingCallback = "0x5604698F4278";
+    private String pongCallback = "0x560B1E381E68";
 
     @PostConstruct
     public void init() {
@@ -62,7 +65,7 @@ public class LogService {
                 .getTracer("my-tracer", "0.0.1");
     }
 
-    public void messagePublish() {
+    public void viewLog() {
         try {
             InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("pingpong.log");
             if (null == inputStream) {
@@ -71,256 +74,189 @@ public class LogService {
             InputStreamReader read = new InputStreamReader(
                     inputStream);
             BufferedReader bufferedReader = new BufferedReader(read);
-            String lineTxt = null;
-            while ((lineTxt = bufferedReader.readLine()) != null) {
-                if (lineTxt.contains("ping") || lineTxt.contains("pong")) {
-                    break;
-                }
-            }
+            String lineTxt;
             //start the whole chain
             timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
-            Span span = tracer.spanBuilder("publish-subscription").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-            try (Scope scope = span.makeCurrent()) {
-
+            Span parentSpan = tracer.spanBuilder("publish-subscription").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+            try (Scope scope = parentSpan.makeCurrent()) {
 
                 while ((lineTxt = bufferedReader.readLine()) != null) {
-                    if (lineTxt.contains("rclcpp_publish")) {
-                        //开始rclcpp_publish
-                        timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
-                        rclCppPublish(lineTxt, bufferedReader);
-                    }
-                    if (lineTxt.contains("rclcpp_executor_execute")) {
-                        //开始rclcpp_publish
-                        String nextLine = bufferedReader.readLine();
-                        if (nextLine.contains("rmw_take")) {
-                            List<String> array = new ArrayList<>();
-                            array.add(nextLine);
-                            for (int i = 0; i < 5; i++) {
-                                array.add(bufferedReader.readLine());
+                    //timer callback
+                    if (lineTxt.contains("callback_start") && lineTxt.contains(timerCallback)) {
+                        Logger.info("timer callback");
+                        Span span = tracer.spanBuilder("timer callback").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+                        try (Scope subScope = span.makeCurrent()) {
+                            getTimeAdded(lineTxt);
+                            while ((lineTxt = bufferedReader.readLine()) != null) {
+                                if (lineTxt.contains("callback_end") && lineTxt.contains(timerCallback)) {
+                                    getTimeAdded(lineTxt);
+                                    span.end(timeStamp, TimeUnit.MICROSECONDS);
+                                    break;
+                                } else {
+                                    //publish
+                                    if (Objects.requireNonNull(lineTxt).contains("rclcpp_publish") ) {
+                                        getTimeAdded(lineTxt);
+                                        lineTxt = bufferedReader.readLine();
+                                        //ping publish
+                                        if (lineTxt.contains(pingPublish)) {
+                                            Logger.info("ping publish");
+                                            getTimeAdded(lineTxt);
+                                            Span publishSpan = tracer.spanBuilder("ping publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+                                            try {
+                                                getTimeAdded(bufferedReader.readLine());
+                                            } finally {
+                                                publishSpan.end(timeStamp, TimeUnit.MICROSECONDS);
+                                            }
+                                        }
+                                        //pong publish
+                                        if (lineTxt.contains("rcl_publish") && lineTxt.contains(pongPublish)) {
+                                            Logger.info("pong publish");
+                                            getTimeAdded(lineTxt);
+                                            Span publishSpan = tracer.spanBuilder("pong publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+                                            try {
+                                                getTimeAdded(bufferedReader.readLine());
+                                            } finally {
+                                                publishSpan.end(timeStamp, TimeUnit.MICROSECONDS);
+                                            }
+                                        }
+                                    }
+                                     else{
+                                         getTimeAdded(lineTxt);
+                                    }
+                                }
                             }
-                            timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
-                            rclCppExecutorExecute(lineTxt, array);
-                            timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
-                            callbacks(array);
+                        } finally {
+                            span.end(timeStamp, TimeUnit.MICROSECONDS);
+                        }
+
+                    }
+
+                    //callback ping
+                    if (Objects.requireNonNull(lineTxt).contains("callback_start") && lineTxt.contains(pingCallback)) {
+                        Logger.info("ping callback");
+                        Span span = tracer.spanBuilder("callback ping").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+                        try (Scope subScope = span.makeCurrent()) {
+                            getTimeAdded(lineTxt);
+                            while ((lineTxt = bufferedReader.readLine()) != null) {
+                                if (lineTxt.contains("callback_end") && lineTxt.contains(pingCallback)) {
+                                    getTimeAdded(lineTxt);
+                                    span.end(timeStamp, TimeUnit.MICROSECONDS);
+                                    break;
+                                } else {
+                                    if (Objects.requireNonNull(lineTxt).contains("rclcpp_publish") ) {
+                                        getTimeAdded(lineTxt);
+                                        lineTxt = bufferedReader.readLine();
+                                        //pong publish
+                                        if (lineTxt.contains("rcl_publish") && lineTxt.contains(pongPublish)) {
+                                            Logger.info("pong publish");
+                                            getTimeAdded(lineTxt);
+                                            Span publishSpan = tracer.spanBuilder("pong publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+                                            try (Scope pubScope = publishSpan.makeCurrent()) {
+                                                getTimeAdded(bufferedReader.readLine());
+                                            } finally {
+                                                publishSpan.end(timeStamp, TimeUnit.MICROSECONDS);
+                                            }
+                                        }
+                                        if (lineTxt.contains("rcl_publish") && lineTxt.contains(pingPublish)) {
+                                            Logger.info("ping publish");
+                                            getTimeAdded(lineTxt);
+                                            Span publishSpan = tracer.spanBuilder("ping publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+                                            try (Scope pubScope = publishSpan.makeCurrent()) {
+                                                getTimeAdded(bufferedReader.readLine());
+                                            } finally {
+                                                publishSpan.end(timeStamp, TimeUnit.MICROSECONDS);
+                                            }
+                                        }
+                                    }
+                                    else{
+                                        getTimeAdded(lineTxt);
+                                    }                                }
+                            }
+                        } finally {
+                            span.end(timeStamp, TimeUnit.MICROSECONDS);
+                        }
+
+                    }
+                    //callback pong
+                    if (Objects.requireNonNull(lineTxt).contains("callback_start") && lineTxt.contains(pongCallback)) {
+                        Logger.info("pong callback");
+                        Span span = tracer.spanBuilder("callback pong").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+                        try (Scope subScope = span.makeCurrent()) {
+                            getTimeAdded(lineTxt);
+                            while ((lineTxt = bufferedReader.readLine()) != null) {
+                                if (lineTxt.contains("callback_end") && lineTxt.contains(pongCallback)) {
+                                    getTimeAdded(lineTxt);
+                                    span.end(timeStamp, TimeUnit.MICROSECONDS);
+                                    break;
+                                } else {
+                                    if (Objects.requireNonNull(lineTxt).contains("rclcpp_publish") ) {
+                                        getTimeAdded(lineTxt);
+                                        lineTxt = bufferedReader.readLine();
+                                        //ping publish
+                                        if (lineTxt.contains(pingPublish)) {
+                                            Logger.info("ping publish");
+                                            getTimeAdded(lineTxt);
+                                            Span publishSpan = tracer.spanBuilder("ping publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+                                            try (Scope pubScope = publishSpan.makeCurrent()) {
+                                                getTimeAdded(bufferedReader.readLine());
+                                            } finally {
+                                                publishSpan.end(timeStamp, TimeUnit.MICROSECONDS);
+                                            }
+                                        }
+                                    }if (Objects.requireNonNull(lineTxt).contains("rclcpp_publish") ) {
+                                        getTimeAdded(lineTxt);
+                                        lineTxt = bufferedReader.readLine();
+                                        //ping publish
+                                        if (lineTxt.contains(pingPublish)) {
+                                            Logger.info("ping publish");
+                                            getTimeAdded(lineTxt);
+                                            Span publishSpan = tracer.spanBuilder("ping publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+                                            try (Scope pubScope = publishSpan.makeCurrent()) {
+                                                getTimeAdded(bufferedReader.readLine());
+                                            } finally {
+                                                publishSpan.end(timeStamp, TimeUnit.MICROSECONDS);
+                                            }
+                                        }
+                                        if (lineTxt.contains(pongPublish)) {
+                                            Logger.info("pong publish");
+                                            getTimeAdded(lineTxt);
+                                            Span publishSpan = tracer.spanBuilder("pong publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
+                                            try (Scope pubScope = publishSpan.makeCurrent()) {
+                                                getTimeAdded(bufferedReader.readLine());
+                                            } finally {
+                                                publishSpan.end(timeStamp, TimeUnit.MICROSECONDS);
+                                            }
+                                        }
+                                    }
+                                    else{
+                                        getTimeAdded(lineTxt);
+                                    }                                }
+                            }
+                        } finally {
+                            span.end(timeStamp, TimeUnit.MICROSECONDS);
+
+
                         }
                     }
+
                 }
                 read.close();
             } finally {
-                span.end(timeStamp, TimeUnit.MICROSECONDS);
+                parentSpan.end(timeStamp, TimeUnit.MICROSECONDS);
             }
         } catch (Exception e) {
-            System.out.println("读取文件内容出错");
+            Logger.info("读取文件内容出错");
             e.printStackTrace();
         }
     }
 
-    //    @WithSpan
-    void rclCppPublish(String lineTxt, BufferedReader bufferedReader) throws IOException {
-        timeDiff = 0L;
-        Span parentSpan = tracer.spanBuilder("rclcpp_publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-        LOGGER.info(lineTxt);
-        try (Scope scope = parentSpan.makeCurrent()) {
-            rclPublish(bufferedReader);
-        } finally {
-            parentSpan.end(timeStamp, TimeUnit.MICROSECONDS);
-        }
-    }
 
-
-    //    @WithSpan
-    void rclPublish(BufferedReader bufferedReader) {
-        String line;
-        try {
-            line = bufferedReader.readLine();
-            LOGGER.info(line);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    private void getTimeAdded(String line) {
         Matcher matcher = pattern.matcher(line);
         if (matcher.find()) {
             Float f = Float.parseFloat(matcher.group()) * 1000000000f;
             timeDiff += TimeUnit.NANOSECONDS.toMicros(f.longValue());
             timeStamp += timeDiff < 1 ? 1 : timeDiff;
-        }
-        Span childSpan = tracer.spanBuilder("rcl_publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-        try (Scope scope = childSpan.makeCurrent()) {
-            rmwPublish(bufferedReader);
-        } finally {
-            childSpan.end(timeStamp, TimeUnit.MICROSECONDS);
-        }
-    }
-
-    //    @WithSpan
-    void rmwPublish(BufferedReader bufferedReader) {
-        String line = null;
-        try {
-            line = bufferedReader.readLine();
-            LOGGER.info(line);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        Matcher matcher = pattern.matcher(line);
-        if (matcher.find()) {
-            Float f = Float.parseFloat(matcher.group()) * 1000000000f;
-            timeDiff += TimeUnit.NANOSECONDS.toMicros(f.longValue());
-            timeStamp += timeDiff < 1 ? 1 : timeDiff;
-        }
-        Span grandChildSpan = tracer.spanBuilder("rmw_publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-
-        try (Scope scope = grandChildSpan.makeCurrent()) {
-            line = bufferedReader.readLine();
-            matcher = pattern.matcher(line);
-            if (matcher.find()) {
-                Float f = Float.parseFloat(matcher.group()) * 1000000000f;
-                timeStamp += TimeUnit.NANOSECONDS.toMicros(f.longValue());
-            }
-            LOGGER.info(line);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-            grandChildSpan.end(timeStamp, TimeUnit.MICROSECONDS);
-        }
-    }
-
-    public void subscriptionCallbacks() {
-        timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
-        Span span = tracer.spanBuilder("subscription-callbacks").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-        try (Scope scope = span.makeCurrent()) {
-            InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("pingpong.log");
-            if (null == inputStream) {
-                throw new NullPointerException("文件不存在");
-            }
-            InputStreamReader read = new InputStreamReader(
-                    inputStream);
-            BufferedReader bufferedReader = new BufferedReader(read);
-            String lineTxt = null;
-
-            while ((lineTxt = bufferedReader.readLine()) != null) {
-                if (lineTxt.contains("rclcpp_executor_execute")) {
-                    //开始rclcpp_publish
-                    String nextLine = bufferedReader.readLine();
-                    if (nextLine.contains("ros2rmw_take")) {
-                        List<String> array = new ArrayList<>();
-                        array.add(nextLine);
-                        for (int i = 0; i < 5; i++) {
-                            array.add(bufferedReader.readLine());
-                        }
-                        timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
-                        rclCppExecutorExecute(lineTxt, array);
-                        timeStamp = TimeUnit.MILLISECONDS.toMicros(System.currentTimeMillis());
-                        callbacks(array);
-                    }
-
-                }
-            }
-            read.close();
-
-        } catch (Exception e) {
-            LOGGER.error(e.getMessage());
-            e.printStackTrace();
-        } finally {
-            span.end();
-        }
-    }
-
-    private void rclCppExecutorExecute(String line, List<String> lines) {
-        timeDiff = 0L;
-        Span parentSpan = tracer.spanBuilder("rclcpp_executor_execute").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-        LOGGER.info(line);
-        try (Scope scope = parentSpan.makeCurrent()) {
-            rclCppTake(lines.get(lines.size() - 4), lines);
-        } finally {
-            parentSpan.end(timeStamp, TimeUnit.MICROSECONDS);
-        }
-    }
-
-    private void rclCppTake(String line, List<String> lines) {
-        LOGGER.info(line);
-        Matcher matcher = pattern.matcher(line);
-        if (matcher.find()) {
-            Float f = Float.parseFloat(matcher.group()) * 1000000000f;
-            timeDiff += TimeUnit.NANOSECONDS.toMicros(f.longValue());
-            timeStamp += timeDiff < 1 ? 1 : timeDiff;
-        }
-        Span childSpan = tracer.spanBuilder("rcl_cpp_take").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-        try (Scope scope = childSpan.makeCurrent()) {
-            rclTake(lines.get(lines.size() - 5), lines);
-        } finally {
-            childSpan.end(timeStamp, TimeUnit.MICROSECONDS);
-        }
-    }
-
-    private void rclTake(String line, List<String> lines) {
-        LOGGER.info(line);
-        Matcher matcher = pattern.matcher(line);
-        if (matcher.find()) {
-            Float f = Float.parseFloat(matcher.group()) * 1000000000f;
-            timeDiff += TimeUnit.NANOSECONDS.toMicros(f.longValue());
-            timeStamp += timeDiff < 1 ? 1 : timeDiff;
-        }
-        Span childSpan = tracer.spanBuilder("rcl_take").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-        try (Scope scope = childSpan.makeCurrent()) {
-            rwmTake(lines.get(lines.size() - 6), lines);
-        } finally {
-            childSpan.end(timeStamp, TimeUnit.MICROSECONDS);
-        }
-    }
-
-    private void rwmTake(String line, List<String> lines) {
-        LOGGER.info(line);
-        Matcher matcher = pattern.matcher(line);
-        if (matcher.find()) {
-            Float f = Float.parseFloat(matcher.group()) * 1000000000f;
-            timeDiff += TimeUnit.NANOSECONDS.toMicros(f.longValue());
-            timeStamp += timeDiff < 1 ? 1 : timeDiff;
-        }
-        Span grandChildSpan = tracer.spanBuilder("rmw_take").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-
-        try (Scope scope = grandChildSpan.makeCurrent()) {
-            line = lines.get(lines.size() - 3);
-            matcher = pattern.matcher(line);
-            if (matcher.find()) {
-                Float f = Float.parseFloat(matcher.group()) * 1000000000f;
-                timeDiff += TimeUnit.NANOSECONDS.toMicros(f.longValue());
-                timeStamp += timeDiff < 1 ? 1 : timeDiff;
-            }
-            LOGGER.info(line);
-        } finally {
-            grandChildSpan.end(timeStamp, TimeUnit.MICROSECONDS);
-        }
-    }
-
-    private void callbacks(List<String> lines) {
-        String line;
-        Span span = tracer.spanBuilder("ros2callback_start").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-        try (Scope scope = span.makeCurrent()) {
-            line = lines.get(lines.size() - 2);
-            Matcher matcher = pattern.matcher(line);
-
-            if (matcher.find()) {
-                Float f = Float.parseFloat(matcher.group()) * 1000000000f;
-                timeDiff += TimeUnit.NANOSECONDS.toMicros(f.longValue());
-                timeStamp += timeDiff < 1 ? 1 : timeDiff;
-            }
-            LOGGER.info(line);
-        } finally {
-            span.end(timeStamp, TimeUnit.MICROSECONDS);
-        }
-
-        Span endSpan = tracer.spanBuilder("ros2callback_end").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-        try (Scope scope = endSpan.makeCurrent()) {
-            line = lines.get(lines.size() - 1);
-            Matcher matcher = pattern.matcher(line);
-
-            if (matcher.find()) {
-                Float f = Float.parseFloat(matcher.group()) * 1000000000f;
-                timeDiff += TimeUnit.NANOSECONDS.toMicros(f.longValue());
-                timeStamp += timeDiff < 1 ? 1 : timeDiff;
-            }
-            LOGGER.info(line);
-        } finally {
-            endSpan.end(timeStamp, TimeUnit.MICROSECONDS);
         }
     }
 }

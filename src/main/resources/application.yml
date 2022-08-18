@@ -1,3 +1,12 @@
 spring:
   application:
     name: log-server
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+
+logging:
+  level:
+    root=INFO:
+  config: classpath:logback-spring.xml
