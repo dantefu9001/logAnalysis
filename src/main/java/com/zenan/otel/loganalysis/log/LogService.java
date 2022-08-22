@@ -85,7 +85,7 @@ public class LogService {
                     if (lineTxt.contains("callback_start") && lineTxt.contains(timerCallback)) {
                         Logger.info("timer callback");
                         Span span = tracer.spanBuilder("timer callback").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-                        try (Scope subScope = span.makeCurrent()) {
+                        try  {
                             getTimeAdded(lineTxt);
                             while ((lineTxt = bufferedReader.readLine()) != null) {
                                 if (lineTxt.contains("callback_end") && lineTxt.contains(timerCallback)) {
@@ -135,7 +135,7 @@ public class LogService {
                     if (Objects.requireNonNull(lineTxt).contains("callback_start") && lineTxt.contains(pingCallback)) {
                         Logger.info("ping callback");
                         Span span = tracer.spanBuilder("callback ping").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-                        try (Scope subScope = span.makeCurrent()) {
+                        try  {
                             getTimeAdded(lineTxt);
                             while ((lineTxt = bufferedReader.readLine()) != null) {
                                 if (lineTxt.contains("callback_end") && lineTxt.contains(pingCallback)) {
@@ -151,7 +151,7 @@ public class LogService {
                                             Logger.info("pong publish");
                                             getTimeAdded(lineTxt);
                                             Span publishSpan = tracer.spanBuilder("pong publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-                                            try (Scope pubScope = publishSpan.makeCurrent()) {
+                                            try {
                                                 getTimeAdded(bufferedReader.readLine());
                                             } finally {
                                                 publishSpan.end(timeStamp, TimeUnit.MICROSECONDS);
@@ -161,7 +161,7 @@ public class LogService {
                                             Logger.info("ping publish");
                                             getTimeAdded(lineTxt);
                                             Span publishSpan = tracer.spanBuilder("ping publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-                                            try (Scope pubScope = publishSpan.makeCurrent()) {
+                                            try {
                                                 getTimeAdded(bufferedReader.readLine());
                                             } finally {
                                                 publishSpan.end(timeStamp, TimeUnit.MICROSECONDS);
@@ -181,7 +181,7 @@ public class LogService {
                     if (Objects.requireNonNull(lineTxt).contains("callback_start") && lineTxt.contains(pongCallback)) {
                         Logger.info("pong callback");
                         Span span = tracer.spanBuilder("callback pong").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-                        try (Scope subScope = span.makeCurrent()) {
+                        try  {
                             getTimeAdded(lineTxt);
                             while ((lineTxt = bufferedReader.readLine()) != null) {
                                 if (lineTxt.contains("callback_end") && lineTxt.contains(pongCallback)) {
@@ -197,7 +197,7 @@ public class LogService {
                                             Logger.info("ping publish");
                                             getTimeAdded(lineTxt);
                                             Span publishSpan = tracer.spanBuilder("ping publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-                                            try (Scope pubScope = publishSpan.makeCurrent()) {
+                                            try  {
                                                 getTimeAdded(bufferedReader.readLine());
                                             } finally {
                                                 publishSpan.end(timeStamp, TimeUnit.MICROSECONDS);
@@ -211,7 +211,7 @@ public class LogService {
                                             Logger.info("ping publish");
                                             getTimeAdded(lineTxt);
                                             Span publishSpan = tracer.spanBuilder("ping publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-                                            try (Scope pubScope = publishSpan.makeCurrent()) {
+                                            try  {
                                                 getTimeAdded(bufferedReader.readLine());
                                             } finally {
                                                 publishSpan.end(timeStamp, TimeUnit.MICROSECONDS);
@@ -221,7 +221,7 @@ public class LogService {
                                             Logger.info("pong publish");
                                             getTimeAdded(lineTxt);
                                             Span publishSpan = tracer.spanBuilder("pong publish").setStartTimestamp(timeStamp, TimeUnit.MICROSECONDS).startSpan();
-                                            try (Scope pubScope = publishSpan.makeCurrent()) {
+                                            try  {
                                                 getTimeAdded(bufferedReader.readLine());
                                             } finally {
                                                 publishSpan.end(timeStamp, TimeUnit.MICROSECONDS);
